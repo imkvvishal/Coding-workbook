@@ -1,0 +1,341 @@
+<!doctype html>
+<head>
+    <title>Online Shopping Store</title>
+    <link href="colors.css" rel="stylesheet">
+<style>
+    .buy{
+        background-color:royalblue;
+    }
+    .thulasi{
+        background-color:lightyellow;
+        border-color: solidblack;
+    }
+
+    h2{
+        background-color: skyblue;
+        padding:20px;
+        color:navy;
+    }
+    h3.heading{
+        width: 400px;      
+        border: 2px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+
+    body{
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+        td{
+            width:33.33%;
+            border:1px black;
+            text-align:center;
+            paddding :15px;
+        }
+        section{
+            width:100%;
+        }
+    }
+</style>
+
+<script>
+    function allowDrop(){
+        event.preventDefault();
+    }
+    function drag(event){
+        event.dataTransfer.setData("text",event.target.id);
+    }
+    function drop(event){
+        event.preventDefault();
+
+        var data=event.dataTransfer.getData("text");
+        var img=document.getElementById(data).cloneNode(true);
+        img.style.width="300px";
+        img.style.height="200px";
+    
+        event.target.appendChild(img);
+    }
+
+    function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        document.getElementById("demo").innerHTML =
+        "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    document.getElementById("demo").innerHTML =
+    "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+
+function showError(error) {
+    document.getElementById("demo").innerHTML =
+    "Location access denied.";
+}
+</script>
+</head>
+
+<body>
+    <center>
+    <h1 style="text-align:center; background-color: lavender;color:black; padding:30px;" >
+        <img src="shopping-cart.png" width="50px" width="70"color="white">ONLINE SHOPPING STORE
+        <img src="shopping-bags.png" width="50px" width="70">
+    </h1>
+    </center>
+
+    <h2 style="background-color:skyblue;color:navy; padding :20px;">AVAILABLE PRODUCTS </h2>
+
+    <center>
+
+    <div class="image-box">
+    <img src="pictures.png" alt="Picture" usemap="#shopmap">
+     </div>
+    </center>
+
+    <map name="shopmap">
+        <area shape="rect"
+        coords="802,61,1064,293"
+        href="#laptop"
+        alt="laptop">
+
+        <area shape="rect"
+        coords="363,44,584,288"
+        href="#mobile"
+        alt="mobile">
+
+    
+        <area shape="rect"
+        coords="590,61,800,289"
+        href="#speaker"
+        alt="speaker">
+
+        <area shape="rect"
+        coords="163,55,356,290"
+        href="#bluetooth"
+        alt="bluetooth">
+    </map>
+
+    
+    <center>
+        <b><h2>LAPTOP </h2></b>
+    </center>
+     <section id="laptop">
+    <table border="1"cellpadding="10" class="thulasi">
+        <tr>
+            <td>
+           <center>
+            <img src="laptop2.jfif" width="200" height:"150"
+            id="lenovo"
+            ondragstart="drag(event)">>
+            <h3>Lenovo IdeaPad Slim 3</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+         <td>
+           <center>
+            <img src="laptop6.jfif" width="200" height:"150"
+            id="asus"
+            ondragstart="drag(event)">>
+            <h3>ASUS VivoBook 15</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+         <td>
+           <center>
+            <img src="laptop4.jfif" width="200" height:"150"
+            id="acer"
+            ondragstart="drag(event)">>
+            <h3>Acer Aspire 5</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+    </tr>
+    </table>
+    </section>
+
+
+    <center>
+        <b><h2>MOBILE PHONE </h2></b>
+    </center>
+     <section id="mobile">
+    <table border="1"cellpadding="10" class="tamil">
+        <tr>
+            <td>
+           <center>
+            <img src="mobile2.jfif" width="200" height:"150"
+            id="samsung"
+            ondragstart="drag(event)">>
+            <h3>Samsung Galaxy A56</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+         <td>
+           <center>
+            <img src="mobile3.jfif" width="200" height:"150"
+            id="apple"
+            ondragstart="drag(event)">>
+            <h3>Apple iphone 16</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+         <td>
+           <center>
+            <img src="mobile4.jfif" width="200" height:"150"
+            id="vivo"
+            ondragstart="drag(event)">>
+            <h3>Vivo V50</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+    </tr>
+    </table>
+    </section>
+
+    <center>
+        <b><h2>BLUETOOTH </h2></b>
+    </center>
+     <section id="bluetooth">
+    <table border="1"cellpadding="20" class="vishal">
+        <tr>
+            <td>
+           <center>
+            <img src="bluetooth5.jfif" width="200" height:"150"
+            id="airpots"
+            ondragstart="drag(event)">>
+            <h3>BOAT Airdopes 141</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+         <td>
+           <center>
+            <img src="bluetooth3.jfif" width="200" height:"150"
+            id="oneplus"
+            ondragstart="drag(event)">>
+            <h3>Oneplus Buds 3</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+         <td>
+           <center>
+            <img src="bluetooth4.jfif" width="200" height:"150"
+            id="realme"
+            ondragstart="drag(event)">>
+            <h3>Realme buds Air 6</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+    </tr>
+    </table>
+    </section>
+
+    <center>
+        <b><h2>SPEAKER</h2></b>
+    </center>
+     <section id="speaker">
+    <table border="1"cellpadding="10" class="vijay">
+        <tr>
+            <td>
+           <center>
+            <img src="speaker5.jfif" width="200" height:"150"
+            id="boat"
+            ondragstart="drag(event)">>
+            <h3>BOAT Stone 1200</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+         <td>
+           <center>
+            <img src="speaker3.jfif" width="200" height:"150"
+            id="sony"
+            ondragstart="drag(event)">>
+            <h3>Sony SRS-XB13</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+         <td>
+           <center>
+            <img src="speaker4.jfif" width="200" height:"150"
+            id="wonderboom"
+            ondragstart="drag(event)">
+            <h3>Ultimate Ears Wonderboom 3</h3>
+            </center>
+            <video width="100%" height="120" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </td>
+    </tr>
+    </table>
+    </section>
+    <hr>
+    <form>
+    <table style="margin-top:15px; height:500px; border:2px solid black; text-align:center; padding-top:20px;">
+        <tr>
+            <td width="30%" valign="top">
+
+    <h3 class="heading"> Shipping Cart</h3>
+    <div id="cart"
+        ondragover="allowDrop(event)"
+        ondrop="drop(event)"
+        style="width:415px; height:500px; border:3px solid black; ">
+        Drop Product here
+    </div>
+    </td>
+
+    <td width="60%" valign="top">
+        <h2> Purchase form </h2>
+        Name :
+        <input  type="text" required><br><br>
+
+       Email :
+       <input type="email"><br><br>
+
+       Phone :
+       <input type="number"><br><br>
+
+       Price :
+       <input type="number"><br><br>
+
+       Quantity :
+       <input type="number"><br><br>
+
+       <button class="buy">Place My Order</button>
+       <button onclick="getLocation()">Get Location</button>
+
+<p id="demo"></p>
+    </td>
+    </tr>
+    </table>
+    </form>
+
+
+</body>
+</html>
