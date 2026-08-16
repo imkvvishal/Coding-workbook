@@ -1,0 +1,170 @@
+<!doctype HTML>
+<head>
+    <title> Job Portal Form </title>
+</head>
+<script>
+function validateform(){
+    let errors=[];
+    let name=document.getElementById('name').value;
+    let fname=document.getElementById('fname').value;
+    let birth=document.getElementById('birth').value;
+    let email=document.getElementById('email').value;
+    let phone=document.getElementById('phone').value;
+    let password=document.getElementById('password').value;
+    let confirm=document.getElementById('confirm').value;
+    let resume=document.getElementById('resume').value;
+    let terms = document.getElementById("terms");
+
+    if(name===""|| fname===""||email===""||phone===""||password===""||confirm===""||resume===""){
+        errors.push("All Fields is required");
+        return false;
+    }
+    if(!email.includes("@")){
+        errors.push("Email is Invalid");
+        return false;
+    }
+    if(!phone.match(/^\d{10}$/)){
+        errors.push("phone Number is Innvalid");
+        return false;
+    }
+
+    if(password !== confirm){
+        errors.push("password Does not match");
+        return false;
+    }
+
+    if(!resume.match(/\.(pdf|doc|docx)$/i)){
+        errors.push("Only PDF/DOC/DOCX are only allowed");
+        return false;
+    }
+
+    if(!terms.checked){
+    errors.push("Please select the checkbox");
+    return false;
+}
+	if(errors.length>0){
+alert(errors.join("\n"));
+return false;
+}
+    alert ("Application Submitted Successfully ");
+    return true;
+}
+</script>
+
+<style>
+.form1{
+    background-color: lightgrey;
+    height:50px;
+    width:50%;
+}
+.body1{
+    background-color:beige;
+}
+
+.butt:hover{
+    background-color: blue;
+}
+
+</style>
+<body class="body1">
+    <center>
+        <h1><img src="online-resource.png" width="30" height="30"> Job Application Form
+	<img src="job-portal.png" width="30" height="30"></h1>
+        <hr>
+        <table class="form1">
+    <form onsubmit="return validateform()" >
+        <tr>
+        <td>Full Name :*</td>
+        <td><input type="text" id="name"></td>
+        </tr>
+
+        <tr>
+        <td>Father's Name :*</td>
+        <td><input type="text" id="fname"></td>
+        </tr><br><br>
+
+        <tr>
+        <td>Date of Birth :*</td>
+        <td><input type="date" id="birth"></td>
+        </tr>
+
+        <tr>
+        <td>Gender :*</td>
+        <td><select>
+            <option>Select</option>
+            <option>Male </option>
+            <option>Female</option>
+            <option>Others</option>
+        </select></td>
+        </tr>
+
+        <tr>
+        <td>Email :*</td>
+        <td><input type="text" id="email"></td>
+        </tr>
+
+        <tr>
+        <td>Mobile Number :*</td>
+        <td><input type="text" id="phone"></td>
+        </tr>
+
+        <tr>
+        <td>Address :*</td>
+        <td><textarea id="address" name="address" rows="2" cols="30"></textarea></td>
+        </tr>
+
+        <tr>
+        <td>City :*</td>
+        <td><select>
+            <option>Select city</option>
+            <option>Madurai</option>
+            <option>virudhunagar</option>
+            <option>chennai</option>
+            <option>Trichy</option>
+            <option>Coimbatore</option>
+            <option>Salem</option>
+            <option>Theni</option>
+        </select></td>
+        </tr>
+
+        <tr>
+        <td>Qualification :*</td>
+        <td>
+            <select>
+                <option>Select  </option>
+                <option>SSLC</option>
+                <option>HSC</option>
+                <option>UG</option>
+                <option>PG</option>
+            </select>
+        </td>
+        </tr>
+
+        <tr>
+        <td>Password :*</td>
+        <td><input type="text" id="password"></td>
+        </tr>
+
+        <tr>
+        <td>Confirm Password :*</td>
+        <td><input type="text" id="confirm"></td>
+        </tr>
+
+        <tr>
+        <td>Resume :*</td>
+        <td><input type="file" id="resume"></td>
+        </tr>
+        </tr>
+
+        <tr>
+        <td><input type="checkbox" id="terms">
+	<label for="terms">I Agree to the terms and conditions</label></td>
+        </tr>
+
+        <tr>
+        <td><button class="butt">Submit</button></td>
+        </tr>
+        </form>
+        </center>
+</body>
+</html>
