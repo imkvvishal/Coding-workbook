@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <books>
+    <book>
+        <bid>101</bid>
+        <bname>Harry Potter</bname>
+        <author>JK Rowlin</author>
+        <publisher>Jack</publisher>
+        <price>1000</price>
+    </book>
+
+    <book>
+        <bid>102</bid>
+        <bname>Lord of the Rings</bname>
+        <author>Mathew</author>
+        <publisher>Percy</publisher>
+        <price>700</price>
+    </book>
+
+    <book>
+        <bid>103</bid>
+        <bname>Mystery Kings</bname>
+        <author>James Paul</author>
+        <publisher>Bane</publisher>
+        <price>600</price>
+    </book>
+    <book>
+        <bid>104</bid>
+        <bname>Mahabarat</bname>
+        <author>Lex Luthor</author>
+        <publisher>Lex Corp</publisher>
+        <price>850</price>
+    </book>
+    <book>
+        <bid>105</bid>
+        <bname>Spider-Man</bname>
+        <author>Walter</author>
+        <publisher>Wales</publisher>
+        <price>850</price>
+    </book>
+</books>
+</root>
